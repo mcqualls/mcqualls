@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Author Portfolio & Fantasy Book Launch</title>
-    <!-- Elegant serif font for a classic fantasy feel -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         /* Global Styles */
@@ -57,7 +56,7 @@
         .book-cover {
             width: 290px;
             height: 440px;
-            background-color: #222; 
+            background-color: #222;
             border-radius: 4px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             object-fit: cover;
@@ -103,7 +102,7 @@
             display: inline-block;
             padding: 14px 32px;
             text-decoration: none;
-            border-radius: 4px; /* More angular, classic look for fantasy */
+            border-radius: 4px;
             font-weight: bold;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -194,7 +193,6 @@
             max-width: 600px;
             margin: 0 auto 30px;
         }
-        /* Free No-Code Form using Formspree */
         .signup-form {
             display: flex;
             flex-direction: column;
@@ -256,7 +254,7 @@
         .author-img {
             width: 220px;
             height: 220px;
-            border-radius: 4px; /* Square/classic look */
+            border-radius: 4px;
             object-fit: cover;
             background-color: #ddd;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
@@ -287,14 +285,13 @@
                 <img src="PQ Cover Mock.png" alt="Book Cover" class="book-cover">
             </div>
             <div class="hero-text">
-                <div class="tagline">An Epic Fantasy Saga</div>
+                <div class="tagline">A Saga Starts</div>
                 <h1>The Pumpkin Queen</h1>
                 <div class="author-byline">By Chris Qualls</div>
-                <p class="synopsis">
-                    Unlikely heroes unite.
-                </p>
+                <p class="synopsis">Unlikely heroes unite.</p>
                 <div class="btn-group">
-                    <a href="https://amazon.com" target="_blank" class="btn btn-primary">Buy on Amazon</a>
+                    <!-- CHANGED: Replaced working link with a placeholder that drops down to the newsletter form -->
+                    <a href="#newsletter" class="btn btn-primary">Coming Soon to Amazon</a>
                     <a href="#newsletter" class="btn btn-secondary">Join Newsletter</a>
                 </div>
             </div>
@@ -321,30 +318,17 @@
             </div>
         </div>
     </section>
-</body>
-       <!-- About Author -->
-    <section class="about">
-        <div class="container">
-            <h2 class="section-title">The Creator</h2>
-            <div class="about-grid">
-                <!-- Change "author.jpg" below to your uploaded file's name -->
-                <img src="choice002.jpg" alt="Author Photo" class="author-img">
-                <div>
-                    <p style="font-size: 1.15rem; margin-bottom: 20px;">
-                        The Pumpkin Queen and the world within was inspired by a lifetime of TSR books featuring high fantasy as well as the more lowkey efforts of Fritz Leiber, Robert E. Howard, Glenn Cook, Robert Silverberg, Fred Saberhagen, and many others.                    </p>
-                    <p>Follow the quest on social media: <strong>@YourHandle</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Newsletter Signup Section -->
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Chris Qualls All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Newsletter Signup Section -->
+<section class="newsletter" id="newsletter">
+    <div class="container">
+        <h2>Join the Inner Circle</h2>
+        <p>Subscribe to receive exclusive fantasy maps, short stories, and updates on The Pumpkin Queen.</p>
+        <form action="https://formspree.io/f/mrpznavn" method="POST" class="signup-form">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</section>
+    (/html)
 
-
-</html>
