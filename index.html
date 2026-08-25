@@ -1,1 +1,266 @@
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Portfolio & Book Launch</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, #1e1e24 0%, #2a2d34 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        @media (min-width: 768px) {
+            .hero-grid {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+            }
+        }
+        .book-cover-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .book-cover {
+            width: 280px;
+            height: 420px;
+            background-color: #444; /* Fallback color */
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            object-fit: cover;
+        }
+        .hero-text {
+            flex: 1.2;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff9f1c;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .author-byline {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        .synopsis {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #ff9f1c;
+            color: #1e1e24;
+        }
+        .btn-primary:hover {
+            background-color: #ffb03b;
+        }
+        .btn-secondary {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #ff9f1c;
+            margin: 10px auto 0;
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .review-card {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9f1c;
+            text-align: left;
+        }
+        .review-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .review-author {
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* About Author Section */
+        .about {
+            padding: 60px 0;
+        }
+        .about-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .about-grid {
+                flex-direction: row;
+            }
+        }
+        .author-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e24;
+            color: #888;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #ff9f1c;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero / Book Introduction -->
+    <header>
+        <div class="container hero-grid">
+            <div class="book-cover-wrapper">
+                <!-- Replace src with your actual book cover image link later -->
+                <img src="https://placeholder.com" alt="Book Cover" class="book-cover">
+            </div>
+            <div class="hero-text">
+                <div class="tagline">The Thrilling New Release</div>
+                <h1>[Your Book Title Here]</h1>
+                <div class="author-byline">By [Your Author Name]</div>
+                <p class="synopsis">
+                    Provide a captivating hook here. Describe the stakes of your story or the core problem your non-fiction book solves. Keep it short, punchy, and enticing enough to make visitors want to click buy immediately.
+                </p>
+                <div class="btn-group">
+                    <a href="https://amazon.com" target="_blank" class="btn btn-primary">Buy on Amazon</a>
+                    <a href="#about" class="btn btn-secondary">Meet the Author</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Praise / Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">What Readers Are Saying</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <p class="review-text">"An absolute masterpiece. I couldn't put it down from the very first page!"</p>
+                    <p class="review-author">— Reviewer Name / Publication</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Beautifully written and deeply moving. Highly recommended for fans of the genre."</p>
+                    <p class="review-author">— Blogger Title</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"The characters stay with you long after you finish reading the final chapter."</p>
+                    <p class="review-author">— Amazon Customer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Author -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About the Author</h2>
+            <div class="about-grid">
+                <!-- Replace src with your profile picture link later -->
+                <img src="https://placeholder.com" alt="Author Photo" class="author-img">
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 15px;">
+                        Write your short biography here. Tell your readers who you are, where you live, what inspires your writing journey, and where they can find you online.
+                    </p>
+                    <p>Connect on Twitter/X or Instagram at <strong>@YourHandle</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Chris Qualls All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
