@@ -1,9 +1,11 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author Portfolio & Book Launch</title>
+    <title>Author Portfolio & Fantasy Book Launch</title>
+    <!-- Elegant serif font for a classic fantasy feel -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         /* Global Styles */
         * {
@@ -12,29 +14,33 @@ html<!DOCTYPE html>
             padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            font-family: 'Lora', Georgia, serif;
+            line-height: 1.7;
+            color: #222;
+            background-color: #faf8f5;
         }
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        h1, h2, h3, .tagline {
+            font-family: 'Cinzel', serif;
+        }
 
         /* Hero Section */
         header {
-            background: linear-gradient(135deg, #1e1e24 0%, #2a2d34 100%);
+            background: linear-gradient(135deg, #111116 0%, #1c1d26 100%);
             color: #fff;
-            padding: 80px 0;
+            padding: 90px 0;
             text-align: center;
+            border-bottom: 3px solid #ff9f1c;
         }
         .hero-grid {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 50px;
         }
         @media (min-width: 768px) {
             .hero-grid {
@@ -49,38 +55,42 @@ html<!DOCTYPE html>
             justify-content: center;
         }
         .book-cover {
-            width: 280px;
-            height: 420px;
-            background-color: #444; /* Fallback color */
+            width: 290px;
+            height: 440px;
+            background-color: #222; 
             border-radius: 4px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .hero-text {
             flex: 1.2;
         }
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: #ff9f1c;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: bold;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 15px;
             line-height: 1.2;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .author-byline {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #ccc;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #ddd;
+            font-style: italic;
         }
         .synopsis {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #e0e0e0;
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+            color: #e5e5e5;
         }
 
         /* Buttons */
@@ -91,18 +101,22 @@ html<!DOCTYPE html>
         }
         .btn {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 14px 32px;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 4px; /* More angular, classic look for fantasy */
             font-weight: bold;
-            transition: transform 0.2s, background 0.2s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
         }
         .btn:hover {
             transform: translateY(-2px);
         }
         .btn-primary {
             background-color: #ff9f1c;
-            color: #1e1e24;
+            color: #111116;
+            box-shadow: 0 4px 15px rgba(255, 159, 28, 0.3);
         }
         .btn-primary:hover {
             background-color: #ffb03b;
@@ -117,22 +131,22 @@ html<!DOCTYPE html>
 
         /* Reviews Section */
         .reviews {
-            padding: 60px 0;
+            padding: 80px 0;
             background-color: #fff;
             text-align: center;
         }
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #111116;
+            letter-spacing: 1px;
         }
         .section-title::after {
-            content: '';
+            content: '♦';
             display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #ff9f1c;
-            margin: 10px auto 0;
+            color: #ff9f1c;
+            font-size: 1.2rem;
+            margin-top: 10px;
         }
         .review-grid {
             display: grid;
@@ -140,29 +154,98 @@ html<!DOCTYPE html>
             gap: 30px;
         }
         .review-card {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 4px solid #ff9f1c;
+            background-color: #faf8f5;
+            padding: 35px;
+            border-radius: 4px;
+            border: 1px solid #eadecc;
             text-align: left;
+            position: relative;
         }
         .review-text {
             font-style: italic;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            color: #444;
         }
         .review-author {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
             font-weight: bold;
-            color: #555;
+            color: #111116;
+            letter-spacing: 1px;
+        }
+
+        /* Newsletter Signup Section */
+        .newsletter {
+            background-color: #1c1d26;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid #eadecc;
+            border-bottom: 1px solid #eadecc;
+        }
+        .newsletter h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .newsletter p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        /* Free No-Code Form using Formspree */
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        @media (min-width: 480px) {
+            .signup-form {
+                flex-direction: row;
+            }
+        }
+        .signup-form input[type="email"] {
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            flex: 1;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            background-color: #111116;
+            color: #fff;
+        }
+        .signup-form input[type="email"]:focus {
+            outline: 2px solid #ff9f1c;
+        }
+        .signup-form button {
+            padding: 15px 30px;
+            background-color: #ff9f1c;
+            color: #111116;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .signup-form button:hover {
+            background-color: #ffb03b;
         }
 
         /* About Author Section */
         .about {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         .about-grid {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
         @media (min-width: 768px) {
@@ -171,21 +254,23 @@ html<!DOCTYPE html>
             }
         }
         .author-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            border-radius: 4px; /* Square/classic look */
             object-fit: cover;
             background-color: #ddd;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #eadecc;
         }
 
         /* Footer */
         footer {
-            background-color: #1e1e24;
-            color: #888;
+            background-color: #111116;
+            color: #777;
             padding: 40px 0;
             text-align: center;
             font-size: 0.9rem;
+            border-top: 1px solid #222;
         }
         footer a {
             color: #ff9f1c;
@@ -199,19 +284,18 @@ html<!DOCTYPE html>
     <header>
         <div class="container hero-grid">
             <div class="book-cover-wrapper">
-                <!-- Replace src with your actual book cover image link later -->
                 <img src="https://placeholder.com" alt="Book Cover" class="book-cover">
             </div>
             <div class="hero-text">
-                <div class="tagline">The Thrilling New Release</div>
+                <div class="tagline">An Epic Fantasy Saga</div>
                 <h1>[Your Book Title Here]</h1>
                 <div class="author-byline">By [Your Author Name]</div>
                 <p class="synopsis">
-                    Provide a captivating hook here. Describe the stakes of your story or the core problem your non-fiction book solves. Keep it short, punchy, and enticing enough to make visitors want to click buy immediately.
+                    Enter a world of forgotten magic and ancient rivalries. When a dark power awakens, unlikely heroes must unite before the kingdoms fall to ash. Craft your ultimate fantasy book hook here.
                 </p>
                 <div class="btn-group">
                     <a href="https://amazon.com" target="_blank" class="btn btn-primary">Buy on Amazon</a>
-                    <a href="#about" class="btn btn-secondary">Meet the Author</a>
+                    <a href="#newsletter" class="btn btn-secondary">Join Newsletter</a>
                 </div>
             </div>
         </div>
@@ -220,40 +304,25 @@ html<!DOCTYPE html>
     <!-- Praise / Reviews -->
     <section class="reviews">
         <div class="container">
-            <h2 class="section-title">What Readers Are Saying</h2>
+            <h2 class="section-title">Praise for The Pumpkin Queen</h2>
             <div class="review-grid">
                 <div class="review-card">
-                    <p class="review-text">"An absolute masterpiece. I couldn't put it down from the very first page!"</p>
-                    <p class="review-author">— Reviewer Name / Publication</p>
+                    <p class="review-text">"I didn't think it was going to be a real book, but it is."</p>
+                    <p class="review-author">— Reviewer / Shane Cunningham - Professional Game Show Loser</p>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">"Beautifully written and deeply moving. Highly recommended for fans of the genre."</p>
-                    <p class="review-author">— Blogger Title</p>
+                    <p class="review-text">"Rich worldbuilding and incredibly sharp magic systems. I stayed up until 3 AM finishing this."</p>
+                    <p class="review-author">— Chris' Mom</p>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">"The characters stay with you long after you finish reading the final chapter."</p>
-                    <p class="review-author">— Amazon Customer</p>
+                    <p class="review-text">"The perfect blend of high stakes, deep lore, and characters you truly root for."</p>
+                    <p class="review-author">— Amazon Reviewer, but also likely Chris' Mom</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Author -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About the Author</h2>
-            <div class="about-grid">
-                <!-- Replace src with your profile picture link later -->
-                <img src="https://placeholder.com" alt="Author Photo" class="author-img">
-                <div>
-                    <p style="font-size: 1.1rem; margin-bottom: 15px;">
-                        Write your short biography here. Tell your readers who you are, where you live, what inspires your writing journey, and where they can find you online.
-                    </p>
-                    <p>Connect on Twitter/X or Instagram at <strong>@YourHandle</strong>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Newsletter Signup Section -->
 
     <!-- Footer -->
     <footer>
